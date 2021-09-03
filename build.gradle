@@ -1,0 +1,35 @@
+apply plugin: 'java'                              // standard Java tasks
+apply plugin: 'war'                               // standard Web Archive plugin
+apply plugin: 'eclipse'
+
+
+buildscript {    // Configuration for building
+
+  repositories {
+     	mavenCentral()
+        mavenLocal()
+        jcenter()
+  }
+}
+
+
+repositories {   // repositories for Jar's you access in your code
+  maven {
+    url 'https://oss.sonatype.org/content/repositories/snapshots' // SNAPSHOT repository (if needed)
+  }
+  mavenCentral()
+  jcenter()
+}
+
+dependencies {
+    
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+	implementation group: 'org.springframework', name: 'spring-context', version: '5.1.3.RELEASE'
+
+	// https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+	compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+	    
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
