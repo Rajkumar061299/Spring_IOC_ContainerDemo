@@ -1,5 +1,8 @@
 package com.fullcreative.main;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Car implements Vehicle{
 
 	public void start() {
